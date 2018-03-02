@@ -11,7 +11,7 @@ una vez integrado el módulo de consultas, únicamente se tiene que publicar sus
 **`php artisan module:publish`**
 
 ### Como se configura
-Cuando esté instalado lo único que tenemos que hacer es ir al arxivo: *Modules/Config/config.php* i dentro del array de *entities* pondremos el par de clave valor que necesitamos para trabajar en la aplicación dónde los datos deberántener el siguiente significado:
+Cuando esté instalado lo único que tenemos que hacer es ir al archivo: *Modules/Config/config.php* i dentro del array de *entities* pondremos el par de clave valor que necesitamos para trabajar en la aplicación dónde los datos deberántener el siguiente significado:
 
 - **key** : Es el nombre de la entidad que queremos que se muestre por pantalla en el desplegable
 - **value** : Es la ruta con el namespace incluido del Modelo de datos que laravel dónde se encuentra definida la instancia con la base de datos de esta entidad.
