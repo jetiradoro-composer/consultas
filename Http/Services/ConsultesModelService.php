@@ -8,10 +8,8 @@
 
 namespace Modules\Consultas\Http\Services;
 
-
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\DB;
 
 /**
  * Class ConsultesModelService
@@ -19,72 +17,70 @@ use Illuminate\Support\Facades\DB;
  * @author Jesús.T *
  * @package Modules\Consultas\Http\Services
  */
-class ConsultesModelService
-{
 
-    /**
-     * Obté tota la configuració d'entitats necessària per treballar amb el mòdul
-     * @return array
-     * @throws \Exception
-     */
-    public function getData()
-    {
-        $models = Config::get('consultas.entities');
-        if($models == null || count($models) == 0) throw new \Exception("no s'han trobat models definits a la configuració");
-        $rs = ['tables'=>[]];
+class ConsultesModelService {
 
-        foreach ($models as $k=>$entity) {
+	/**
+	 * Obté tota la configuració d'entitats necessària per treballar amb el mòdul
+	 * @return array
+	 * @throws \Exception
+	 */
+	public function getData() {
+		$models = Config::get('consultas.entities');
+		if ($models == null || count($models) == 0) {throw new \Exception("No se han encontrado modelos definidos en la configuración");
+		}
 
-            $instance = $this->getModel($entity);
+		$rs = ['tables' => []];
 
-            $rs[$k]=[
-                'entity' => $k,
-                'table' => $instance->getTable(),
-            ];
-            $rs[$k]['fields'] = $this->getEntityDesc($instance);
-        }
+		foreach ($models as $k => $entity) {
 
-        return collect($rs);
-    }
+			$instance = $this->getModel($entity);
 
-    /**
-     * Torna l'array d'una entitat en concret
-     * @param \Illuminate\Database\Eloquent\Model $entity
-     *
-     * @return array
-     */
-    private function getEntityDesc(Model $entity)
-    {
-        $columns = $entity->getConnection()->getSchemaBuilder()->getColumnListing($entity->getTable());
-        asort($columns);
+			$rs[$k] = [
+				'entity' => $k,
+				'table'  => $instance->getTable(),
+			];
+			$rs[$k]['fields'] = $this->getEntityDesc($instance);
+		}
 
-        $hiddens = $entity->getHidden();
-        $rs = [];
-        foreach($columns as $col){
-            $key = str_replace('_',' ',$col);
-            if(!in_array(strtolower($col),$hiddens)){
-                // $type = $entity->getConnection()->getSchemaBuilder()->getColumnType($entity->getTable(),$col);
-                $rs[$key] = $col;
-            }
+		return collect($rs);
+	}
 
+	/**
+	 * Torna l'array d'una entitat en concret
+	 * @param \Illuminate\Database\Eloquent\Model $entity
+	 *
+	 * @return array
+	 */
+	private function getEntityDesc(Model $entity) {
+		$columns = $entity->getConnection()->getSchemaBuilder()->getColumnListing($entity->getTable());
+		asort($columns);
 
-        }
-//        foreach($columns as $col){
-//            $type = $entity->getConnection()->getSchemaBuilder()->getColumnType($entity->getTable(),$col);
-//            $rs[$col] = $type;
-//        }
-        return $rs;
-    }
+		$hiddens = $entity->getHidden();
+		$rs      = [];
+		foreach ($columns as $col) {
+			$key = str_replace('_', ' ', $col);
+			if (!in_array(strtolower($col), $hiddens)) {
+				// $type = $entity->getConnection()->getSchemaBuilder()->getColumnType($entity->getTable(),$col);
+				$rs[$key] = $col;
+			}
 
-    /**
-     * Crea una nova instància de la classe passada per paràmetre
-     * @param $name
-     *
-     * @return mixed
-     */
-    private function getModel($name)
-    {
-        return new $name();
+		}
+		//        foreach($columns as $col){
+		//            $type = $entity->getConnection()->getSchemaBuilder()->getColumnType($entity->getTable(),$col);
+		//            $rs[$col] = $type;
+		//        }
+		return $rs;
+	}
 
-    }
+	/**
+	 * Crea una nova instància de la classe passada per paràmetre
+	 * @param $name
+	 *
+	 * @return mixed
+	 */
+	private function getModel($name) {
+		return new $name();
+
+	}
 }
