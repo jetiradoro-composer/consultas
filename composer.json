@@ -2,13 +2,18 @@
     "name": "jetiradoro/consultas-module",
     "description": "Modulo de consultas dinámicas",
     "type":"laravel-module",
+    "license" : "MIT",
     "authors": [
     
         {
             "name" : "Jesús Tirado",
-            "email" : "jesus@jetiradoro.com"
+            "email" : "jesus@jetiradoro.com",
+            "role" : "Developer"
         }
     ],
+    "support" : {
+        "email" : "jesus@jetiradoro.com"
+    },
     
     "extra": {
         "laravel": {
@@ -30,5 +35,8 @@
     },
     "require": {
         "joshbrw/laravel-module-installer": "^0.1.4"
-    }
+    },
+
+    "minimum-stability" : "dev"
+
 }

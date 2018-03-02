@@ -1,6 +1,6 @@
 @extends('layouts.admin.app')
 
-@section('title') Constructor de consultes dinàmiques @endsection
+@section('title') Constructor de consultas dinámicas @endsection
 
 @section('addCss')
     @parent
@@ -17,7 +17,7 @@
     <div id="app">
         <div class="card">
             <div class=" bgm-cyan pd-3">
-                <h4 class="font-color-white ml-40">Filtres de recerca</h4>
+                <h4 class="font-color-white ml-40">Filtros de búsqueda</h4>
             </div>
             <div class="card-body card-padding">
 
@@ -34,17 +34,13 @@
 
                     <div class="form-group">
                         <button @click.prevent="sendRequest('#sendForm')" id="sendForm" action="{{route('consultas.set-query',['excel'=>false])}}" type="submit"
-                                class="btn btn-primary btn-filter ">Cercar
+                                class="btn btn-primary btn-filter ">Buscar
                         </button>
                         <button type="submit"  class="btn btn-success">Exportar a Excel</button>
                     </div>
 
                     <div class="row margin-bottom-40">
-                        {{--<pre>@{{filter}}</pre>--}}
-
                         @include('consultas::partials.tabs')
-
-
                     </div>
                 </form>
             </div>
@@ -53,7 +49,7 @@
         {{--TABLE RESULTS--}}
         <div v-show="result.status == 'success'" class="card">
             <div class=" bgm-cyan pd-3">
-                <h4 class="font-color-white ml-40">(@{{ result.total }}) Resultats de la consulta</h4>
+                <h4 class="font-color-white ml-40">(@{{ result.total }}) Resultados de la consulta</h4>
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-striped  table-hover nowrap">
