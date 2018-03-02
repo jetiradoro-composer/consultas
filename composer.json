@@ -1,12 +1,15 @@
 {
-    "name": "nwidart/consultas",
-    "description": "",
+    "name": "jetiradoro/consultas-module",
+    "description": "Modulo de consultas dinámicas",
+    "type":"laravel-module",
     "authors": [
+    
         {
-            "name": "Nicolas Widart",
-            "email": "n.widart@gmail.com"
+            "name" : "Jesús Tirado",
+            "email" : "jesus@jetiradoro.com"
         }
     ],
+    
     "extra": {
         "laravel": {
             "providers": [
@@ -24,5 +27,8 @@
         "psr-4": {
             "Modules\\Consultas\\": ""
         }
+    },
+    "require": {
+        "joshbrw/laravel-module-installer": "^0.1.4"
     }
 }

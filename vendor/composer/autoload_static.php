@@ -27,6 +27,10 @@ class ComposerStaticInit1a883e28f455ff92935a248d9041f5e2
         array (
             'Modules\\Consultas\\' => 18,
         ),
+        'J' => 
+        array (
+            'Joshbrw\\LaravelModuleInstaller\\' => 31,
+        ),
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
@@ -38,8 +42,8 @@ class ComposerStaticInit1a883e28f455ff92935a248d9041f5e2
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -52,6 +56,10 @@ class ComposerStaticInit1a883e28f455ff92935a248d9041f5e2
         'Modules\\Consultas\\' => 
         array (
             0 => __DIR__ . '/../..' . '/',
+        ),
+        'Joshbrw\\LaravelModuleInstaller\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/joshbrw/laravel-module-installer/src',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
