@@ -34,9 +34,10 @@
         }
     },
     "require": {
-        "joshbrw/laravel-module-installer": "^0.1.4"
+        "joshbrw/laravel-module-installer": "^0.1.4",
+        "maatwebsite/excel" : "~2.1.0"
     },
 
-    "minimum-stability" : "dev"
+    "minimum-stability" : "stable"
 
 }

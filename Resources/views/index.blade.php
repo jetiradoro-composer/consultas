@@ -1,15 +1,8 @@
-@extends('layouts.admin.app')
-
-@section('title') Constructor de consultas dinámicas @endsection
+@extends('consultas::layouts.master')
 
 @section('addCss')
     @parent
     <link rel="stylesheet" href="{{Module::asset('consultas:css/consultas_style.css')}}">
-@endsection
-
-@section('breadcrumb')
-    <li><a href="#">Exportacions</a></li>
-    <li><span>Consultes Dinàmiques</span></li>
 @endsection
 
 
@@ -80,6 +73,13 @@
     @parent
     <script>
         let $entities = JSON.parse('{!! $entities !!}');
+        let $csrf = "{{csrf_token()}}";
+        $(function(){
+            $('#Tabs a').click(function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+            })
+        });
     </script>
 
 @endsection

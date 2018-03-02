@@ -1,6 +1,6 @@
 {{--botón para añadir nuevo filtro--}}
 
-<div v-if="filter.entity_master" class="row">
+<div style="margin-top:15px" v-if="filter.entity_master" class="row">
     <div v-show="filter.where.length > 0" class="col-sm-2">
         <div class="form-group">
             <label for="">Concatenador</label>
@@ -74,9 +74,9 @@
     </div>
 
 
-    <div class="col-sm-4">
-        <span @click="addFilter" style="font-size:1.5em; cursor:pointer">
-            <i class="fa fa-plus-circle" aria-hidden="true"></i> Add Filter
+    <div style="margin-top: 25px" class="col-sm-4">
+        <span @click="addFilter" style="font-size:1.5em; cursor:pointer; ">
+            <i style="color: green;" class="glyphicon glyphicon-ok-circle" aria-hidden="true"></i> Add Filter
         </span>
     </div>
 

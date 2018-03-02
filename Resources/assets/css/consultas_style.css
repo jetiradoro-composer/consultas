@@ -30,3 +30,8 @@
 .font-color-red{
     color:red !important;
 }
+
+.tabl-content .btn:active{
+    background-color: #08216e !important;
+    color: white !important;
+}

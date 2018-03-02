@@ -22,10 +22,6 @@ class ConsultasController extends Controller {
 
 		$entities = $model->getData();
 
-		//obtener listados disponibles
-		// $entities = $this->getTables();
-
-		//  $data['entities'] = $entities;
 
 		return view('consultas::index', ['entities' => $entities->toJson()]);
 	}
@@ -224,8 +220,8 @@ class ConsultasController extends Controller {
 		$date1 = Carbon::createFromFormat('Y-m-d', $dates[0]);
 		$date2 = Carbon::createFromFormat('Y-m-d', $dates[1]);
 
-		$date1_oracle = " CAST('".$date1->format('Y-m-d')."','AS DATE')";
-		$date2_oracle = " CAST('".$date2->format('Y-m-d')."','AS DATE')";
+		$date1_oracle = " CAST('".$date1->format('Y-m-d')."' AS DATE)";
+		$date2_oracle = " CAST('".$date2->format('Y-m-d')."' AS DATE)";
 
 		return [$date1_oracle, $date2_oracle];
 	}

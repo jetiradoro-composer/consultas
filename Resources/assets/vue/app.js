@@ -152,7 +152,8 @@ let vm = new Vue({
                 let params = {
                     'table': this.filter.entity_master.table,
                     'select': this.filter.select,
-                    'where': this.filter.where
+                    'where': this.filter.where,
+                    '_token': $csrf,
                 };
 
                 vm.showLoading();
@@ -299,6 +300,11 @@ let vm = new Vue({
             $('body #loader').remove();
         },
 
+    },
+    filters: {
+        upper: function(e){
+            return e.toUpperCase();
+        }
     }
 });
 
