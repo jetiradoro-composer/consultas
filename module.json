@@ -1,0 +1,16 @@
+{
+    "name": "Consultas",
+    "alias": "consultas",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Consultas\\Providers\\ConsultasServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}
