@@ -1,7 +1,7 @@
 # Consultas Dinámicas
 He creado un componente para poder realizar consultas dinámicas de tal forma que se pueda extraer de manera rápida cualquier dato de las tablas configuradas en el componente.
 
-## Documentación Técnica
+## Documentación Técnica
 Este componente está realizado con como un módulo de Laravel 5.3 y con Vue para el flujo de datos. Para poder utilizarlo, el proyecto debe de estar desarrollado con Laravel y utilizar el componente:
 
 `nwidart/laravel-modules`
